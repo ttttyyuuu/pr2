@@ -25,7 +25,9 @@
 - **[MDN HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)** - HTML документация от MDN;
 - **[MDN CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)** - CSS документация от MDN;
 - **[git](https://git-scm.com/)** - скачивание Git к себе на устройство, чтобы пользоваться консолью и интерфейсом;
-- **[node.js](https://nodejs.org/en/download)** - установка Node.js на устройство (+ npm, python и другие важныеи инструменты).
+- **[node.js](https://nodejs.org/en/download)** - установка Node.js на устройство (+ npm, python и другие важныеи инструменты);
+- **[Dribble](https://dribbble.com/)** - для идей также используем Dribble;
+- **[Tailwind CSS Showcase](https://tailwindcss.com/showcase)** - примеры проектов с использованием Tailwind CSS.
 
 ## Используемые материалы
 - отчет по первой части практического занятия №2;
