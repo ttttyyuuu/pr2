@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your account to join the Aesthetic Setups community and share your beautiful PC setups.">
+    <title>Register - Aesthetic Setups</title>
+    <!-- Подключение Tailwind CSS через CDN для быстрой стилизации компонентов -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение библиотеки иконок Font Awesome через CDN для использования векторных иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Подключение шрифта Pirata One из Google Fonts для заголовков и акцентных элементов -->
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <!-- Настройка Favicon сайта в форматах SVG и PNG для отображения в браузере -->
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <!-- Подключение шрифта Funnel из Fontshare для основного текста и форм -->
+    <link href="https://api.fontshare.com/v2/css?f[]=funnel@400,700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-[#E5CBE6]">
+
+    <!-- Уведомление об успешной регистрации (скрыто по умолчанию, показывается после отправки формы) -->
+    <div id="successNotification" class="hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+        <div class="bg-white rounded-lg shadow-lg px-6 py-3 flex items-center space-x-3">
+            <i class="fas fa-check-circle text-[#E6C2DF] text-xl"></i>
+            <p class="font-['Funnel'] text-[#251725]">Account created successfully!</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Ссылка для возврата на главную страницу, расположенная в левом верхнем углу -->
+        <a href="../index.html" class="fixed top-6 left-6 z-10 text-white hover:text-[#E6C2DF] transition-colors">
+            <i class="fas fa-folder text-4xl drop-shadow-lg" aria-label="Вернуться на главную"></i>
+        </a>
+
+        <div class="flex h-screen">
+            <!-- Секция с декоративным изображением, отображается только на больших экранах -->
+            <div class="hidden lg:block w-1/2">
+                <img src="../images/for_reg_auth.jpg" alt="Auth Banner" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Секция с формой регистрации, содержащая поля для ввода данных пользователя -->
+            <div class="w-full lg:w-1/2 flex items-center justify-center px-8 bg-[#E5CBE6]">
+                <div class="w-full max-w-md">
+                    <h2 class="text-4xl font-['Pirata_One'] text-[#251725] mb-8 text-center">Create Account</h2>
+                    <form id="registerForm" class="space-y-6">
+                        <div>
+                            <label class="block font-['Funnel'] text-[#251725] mb-2" for="username">Username</label>
+                            <input type="text" id="username" required minlength="3"
+                                class="w-full px-4 py-3 rounded-lg bg-white
+                                       focus:outline-none font-['Funnel']" 
+                                       placeholder="Your username">
+                        </div>
+                        <div>
+                            <label class="block font-['Funnel'] text-[#251725] mb-2" for="email">Email</label>
+                            <input type="email" id="email" required
+                                class="w-full px-4 py-3 rounded-lg bg-white
+                                       focus:outline-none font-['Funnel']" 
+                                       placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block font-['Funnel'] text-[#251725] mb-2" for="password">Password</label>
+                            <input type="password" id="password" required minlength="6"
+                                class="w-full px-4 py-3 rounded-lg bg-white
+                                       focus:outline-none font-['Funnel']" 
+                                       placeholder="••••••••">
+                        </div>
+                        <div>
+                            <label class="block font-['Funnel'] text-[#251725] mb-2" for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" required minlength="6"
+                                class="w-full px-4 py-3 rounded-lg bg-white
+                                       focus:outline-none font-['Funnel']" 
+                                       placeholder="••••••••">
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-[#251725] text-[#E5CBE6] py-3 rounded-lg 
+                                   font-['Pirata_One'] text-xl hover:bg-[#E6C2DF] 
+                                   hover:text-[#251725] transition-all duration-300">
+                            Create Account
+                        </button>
+                    </form>
+                    <p class="mt-6 text-center font-['Funnel'] text-[#251725]">
+                        Already have an account? 
+                        <a href="login.html" class="font-['Pirata_One'] text-[#251725] border-b-2 border-[#E6C2DF] hover:text-[#E6C2DF] transition-colors">
+                            Login here
+                        </a>
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Добавление JavaScript для валидации формы и отображения уведомлений о результате регистрации -->
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            let isValid = true;
+
+            // Валидация имени пользователя (минимум 3 символа)
+            if (username.value.length < 3) {
+                isValid = false;
+                username.classList.add('border-red-500');
+            } else {
+                username.classList.remove('border-red-500');
+            }
+
+            // Валидация email адреса с помощью регулярного выражения
+            if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                isValid = false;
+                email.classList.add('border-red-500');
+            } else {
+                email.classList.remove('border-red-500');
+            }
+
+            // Валидация пароля (минимум 6 символов)
+            if (password.value.length < 6) {
+                isValid = false;
+                password.classList.add('border-red-500');
+            } else {
+                password.classList.remove('border-red-500');
+            }
+
+            // Проверка совпадения пароля и его подтверждения
+            if (password.value !== confirmPassword.value) {
+                isValid = false;
+                confirmPassword.classList.add('border-red-500');
+            } else {
+                confirmPassword.classList.remove('border-red-500');
+            }
+
+            if (isValid) {
+                // Отображение уведомления об успешной регистрации
+                const notification = document.getElementById('successNotification');
+                notification.classList.remove('hidden');
+                
+                // Перенаправление на главную страницу через 2 секунды
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 2000);
+            }
+        });
+    </script>
+
+    <footer class="bg-[#251725] text-[#E5CBE6] py-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-folder text-xl text-[#E6C2DF]" aria-label="Логотип"></i>
+                    <span class="font-['Pirata_One']">Aesthetic Setups</span>
+                </div>
+                <div class="text-sm">
+                    <p>&copy; 2025 Aesthetic Setups. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Instagram">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Discord">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover and share beautiful PC setups. Join our community of aesthetic setup enthusiasts.">
+    <title>Aesthetic Setups</title>
+    <!-- Подключение Tailwind CSS через CDN для быстрой стилизации компонентов -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение библиотеки иконок Font Awesome через CDN для использования векторных иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Подключение пользовательских шрифтов Google Fonts для улучшения типографики -->
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <!-- Настройка Favicon сайта в форматах SVG и PNG для отображения в браузере -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Подключение шрифта Funnel из Fontshare для основного текста сайта -->
+    <link href="https://api.fontshare.com/v2/css?f[]=funnel@400,700&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-[#E5CBE6]">
+    <header class="bg-[#251725] text-[#E5CBE6] py-6 shadow-lg">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-folder text-3xl text-[#E6C2DF] hover:text-[#E5CBE6] transition-colors" aria-label="Логотип сайта"></i>
+                <a href="index.html" class="text-3xl font-['Pirata_One'] text-[#E6C2DF] hover:text-[#E5CBE6] transition-colors tracking-wider">Aesthetic Setups</a>
+            </div>
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Home</a>
+                <a href="pages/login.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Login</a>
+                <a href="pages/register.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Секция главного баннера с фоновым изображением и приветственным текстом -->
+        <section class="relative h-[600px] w-full mb-16">
+            <img src="./images/banner.jpg" alt="Setup Banner" class="w-full h-full object-cover brightness-75">
+            <div class="absolute top-1/2 transform -translate-y-1/2 left-16 max-w-lg">
+                <h1 class="text-6xl font-['Pirata_One'] text-white mb-4 shadow-text">Welcome to Aesthetic Setups</h1>
+                <p class="text-2xl font-['Funnel'] text-[#E5CBE6] mb-8 shadow-text">Discover and share beautiful PC setups</p>
+                <a href="pages/register.html" 
+                   class="inline-block bg-[#E6C2DF] text-[#251725] px-8 py-4 rounded-lg 
+                          font-['Pirata_One'] text-2xl hover:bg-[#251725] hover:text-[#E6C2DF] 
+                          transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Join the Community
+                </a>
+            </div>
+        </section>
+
+        <!-- Добавление пользовательских стилей для создания тени текста на баннере -->
+        <style>
+            .shadow-text {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+
+        <section class="container mx-auto px-6 mb-16">
+            <h2 class="text-4xl font-['Pirata_One'] text-[#251725] mb-8">Featured Setups</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-hidden">
+                <!-- Карточка первого компьютерного сетапа с изображением и описанием -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="transform transition-transform duration-300 group-hover:scale-[1.02]">
+                        <img src="./images/pc_setup_1.jpg" alt="PC Setup 1" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-['Pirata_One'] text-2xl text-[#251725] mb-3">Pink One</h3>
+                            <p class="font-['Funnel'] text-[#251725] mb-4">It's pink</p>
+                            <a href="#" class="inline-block text-[#251725] font-['Pirata_One'] hover:text-[#E6C2DF] transition-colors">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка второго компьютерного сетапа с изображением и описанием -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="transform transition-transform duration-300 group-hover:scale-[1.02]">
+                        <img src="./images/pc_setup_2.jpg" alt="PC Setup 2" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-['Pirata_One'] text-2xl text-[#251725] mb-3">Whatever this is</h3>
+                            <p class="font-['Funnel'] text-[#251725] mb-4">IDK</p>
+                            <a href="#" class="inline-block text-[#251725] font-['Pirata_One'] hover:text-[#E6C2DF] transition-colors">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка третьего компьютерного сетапа с изображением и описанием -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="transform transition-transform duration-300 group-hover:scale-[1.02]">
+                        <img src="./images/pc_setup_3.jpg" alt="PC Setup 3" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-['Pirata_One'] text-2xl text-[#251725] mb-3">Furina</h3>
+                            <p class="font-['Funnel'] text-[#251725] mb-4">I hope you've enjoyed the part you played these five hundred years</p>
+                            <a href="#" class="inline-block text-[#251725] font-['Pirata_One'] hover:text-[#E6C2DF] transition-colors">
+                                Learn More →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#251725] text-[#E5CBE6] py-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-folder text-xl text-[#E6C2DF]" aria-label="Логотип"></i>
+                    <span class="font-['Pirata_One']">Aesthetic Setups</span>
+                </div>
+                <div class="text-sm">
+                    <p>&copy; 2025 Aesthetic Setups. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Instagram">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors" aria-label="Discord">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
