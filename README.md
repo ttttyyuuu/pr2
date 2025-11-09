@@ -19,7 +19,7 @@
 ## Документация для работы с проектом
 ### Основные ресурсы:
 - **[Tailwind CSS](https://tailwindcss.com/)** - утилитарный CSS-фреймворк, который позволяет стилизовать интерфейс с помощью готовых классов прямо в HTML или JSX/TSX. В отличие от традиционных CSS-фреймворков, Tailwind не предоставляет готовых компонентов, а даёт набор низкоуровневых утилитарных классов;
-- **[Google Fonts](https://fonts.googleapis.com)** - получение шрифтов;
+- **[Google Fonts](https://fonts.google.com)** - получение шрифтов;
 - **[Font Awesome v4](https://fontawesome.com/v4/icons/)** - иконки для приложения;
 - **[FontShare](https://www.fontshare.com/)** - облачный сервис по доставке шрифтов;
 - **[MDN HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)** - HTML документация от MDN;
