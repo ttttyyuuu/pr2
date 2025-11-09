@@ -50,6 +50,7 @@
 
 ### Git
 Также, для работы с системой контроля версий Git необходимо установить расширения GitHub Pull Requests и GitLens.
+
 <img width="707" height="750" alt="image" src="https://github.com/user-attachments/assets/7425fd8b-b7ca-4b32-bff0-480a32530981" />
 
 <img width="703" height="723" alt="image" src="https://github.com/user-attachments/assets/24072c44-f3ef-447a-990c-4a4a71305f63" />
