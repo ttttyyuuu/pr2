@@ -16,6 +16,8 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- Подключение шрифта Funnel из Fontshare для основного текста сайта -->
     <link href="https://api.fontshare.com/v2/css?f[]=funnel@400,700&display=swap" rel="stylesheet">
+    <!-- Глобальный менеджер темы -->
+    <script src="js/theme.js"></script>
 </head>
 <body class="flex flex-col min-h-screen bg-[#E5CBE6]">
     <header class="bg-[#251725] text-[#E5CBE6] py-6 shadow-lg">
@@ -28,6 +30,15 @@
                 <a href="index.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Home</a>
                 <a href="pages/login.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Login</a>
                 <a href="pages/register.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Register</a>
+                <!-- Кнопка переключения тёмного режима -->
+                <button id="darkModeToggle" class="text-xl hover:text-[#E6C2DF] transition-colors" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Кнопка профиля -->
+                <a href="pages/profile.html" class="flex items-center space-x-2 bg-[#E6C2DF] text-[#251725] px-4 py-2 rounded-lg hover:bg-[#251725] hover:text-[#E6C2DF] transition-all font-['Pirata_One']" aria-label="Open profile">
+                    <i class="fas fa-user"></i>
+                    <span id="profileName">Guest</span>
+                </a>
             </div>
         </nav>
     </header>
@@ -127,5 +138,35 @@
             </div>
         </div>
     </footer>
+
+
+
+    <!-- Dark Mode Styles -->
+    <style>
+        /* Основные стили для тёмного режима */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e5e5e5;
+        }
+    </style>
+
+    <!-- JavaScript для загрузки профиля -->
+    <script>
+        // Функция для загрузки данных профиля из localStorage
+        function loadProfileData() {
+            // Получаем сохраненные данные профиля или используем значения по умолчанию
+            const userProfile = JSON.parse(localStorage.getItem('userProfile')) || {
+                username: 'Guest',
+                email: '',
+                bio: ''
+            };
+
+            // Обновляем имя профиля в заголовке
+            document.getElementById('profileName').textContent = userProfile.username || 'Guest';
+        }
+
+        // Загружаем профиль при загрузке DOM
+        document.addEventListener('DOMContentLoaded', loadProfileData);
+    </script>
 </body>
 </html>
