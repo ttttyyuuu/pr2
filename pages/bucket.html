@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Aesthetic Setups</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=funnel@400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <script src="../js/theme.js"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-[#E5CBE6]">
+    <header class="bg-[#251725] text-[#E5CBE6] py-6 shadow-lg">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-folder text-3xl text-[#E6C2DF] hover:text-[#E5CBE6] transition-colors"></i>
+                <a href="../index.html" class="text-3xl font-['Pirata_One'] text-[#E6C2DF] hover:text-[#E5CBE6] transition-colors tracking-wider">Aesthetic Setups</a>
+            </div>
+            <div class="flex items-center space-x-8">
+                <a href="../index.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Home</a>
+                <a href="login.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Login</a>
+                <a href="register.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Register</a>
+                <a href="bucket.html" class="font-['Pirata_One'] text-xl hover:text-[#E6C2DF] transition-colors border-b-2 border-transparent hover:border-[#E6C2DF]">Cart</a>
+                <button id="darkModeToggle" class="text-xl hover:text-[#E6C2DF] transition-colors">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-16">
+        <h1 class="text-4xl font-['Pirata_One'] text-[#251725] mb-8">Shopping Cart</h1>
+        <div id="cartContent" class="bg-white rounded-xl shadow-lg p-8">
+            <!-- Карточка товара в корзине -->
+            <div class="flex items-center justify-between border-b pb-4 mb-4">
+                <img src="../images/cool_setUp.jpg" alt="Cool Setup" class="w-24 h-24 object-cover rounded-lg">
+                <!-- Информация о товаре -->
+                <div class="flex-grow ml-6">
+                    <h3 class="text-2xl font-['Pirata_One'] text-[#251725]">Cool Setup</h3>
+                    <p class="font-['Funnel'] text-[#251725]">Premium aesthetic PC setup</p>
+                </div>
+                <!-- Цена товара -->
+                <div class="text-right">
+                    <p class="text-2xl font-['Pirata_One'] text-[#251725]">$1,000</p>
+                </div>
+            </div>
+            
+            <!-- Итоговая сумма и кнопка оформления заказа -->
+            <div class="flex justify-between items-center pt-4">
+                <p class="text-xl font-['Funnel'] text-[#251725]">Total: <span class="font-['Pirata_One']">$1,000</span></p>
+                <!-- Кнопка оформления заказа -->
+                <button id="checkoutBtn" class="bg-[#251725] text-[#E5CBE6] px-8 py-3 rounded-lg font-['Pirata_One'] text-xl hover:bg-[#E6C2DF] hover:text-[#251725] transition-all duration-300">
+                    Checkout
+                </button>
+            </div>
+        </div>
+
+        <!-- Сообщение о пустой корзине (скрыто по умолчанию) -->
+        <div id="emptyCart" class="hidden bg-white rounded-xl shadow-lg p-8 text-center">
+            <i class="fas fa-shopping-cart text-6xl text-[#E6C2DF] mb-4"></i>
+            <h3 class="text-2xl font-['Pirata_One'] text-[#251725] mb-4">Your cart is empty</h3>
+            <!-- Кнопка возврата к покупкам -->
+            <a href="../index.html" class="inline-block bg-[#251725] text-[#E5CBE6] px-6 py-3 rounded-lg font-['Pirata_One'] hover:bg-[#E6C2DF] hover:text-[#251725] transition-all">
+                Continue Shopping
+            </a>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-[#251725] text-[#E5CBE6] py-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-folder text-xl text-[#E6C2DF]"></i>
+                    <span class="font-['Pirata_One']">Aesthetic Setups</span>
+                </div>
+                <div class="text-sm">
+                    <p>&copy; 2025 Aesthetic Setups. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#E6C2DF] transition-colors">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="orderNotification" class="hidden fixed top-4 right-4 bg-white rounded-lg shadow-xl p-4 flex items-center space-x-3 z-50">
+        <i class="fas fa-check-circle text-[#E6C2DF] text-xl"></i>
+        <p class="font-['Funnel'] text-[#251725]">Order accepted! Thank you for your purchase.</p>
+    </div>
+
+    <!-- JavaScript код для функциональности корзины -->
+    <script>
+        // Обработчик клика по кнопке "Checkout"
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            const notification = document.getElementById('orderNotification');
+            notification.classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById('cartContent').classList.add('hidden');
+                document.getElementById('emptyCart').classList.remove('hidden');
+                notification.classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
